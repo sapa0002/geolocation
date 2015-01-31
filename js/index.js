@@ -26,18 +26,10 @@ function location() {
 		errorMessage.setAttribute("id", "errorContainer");
 		document.body.appendChild(errorMessage);
 		errorMessage.innerHTML="Your browser doesn't support geolocation API.";	
-		
+			
 	}
-	container.innerHTML = "<p id = 'yourLocation' style='text-align: center'>Your location is </p>";
-		parameters = {
-			enableHighAccuracy: true,
-			timeout: 5000,
-			maximumAge: 0	
-		}
-		
-	navigator.geolocation.getCurrentPosition(yesLocation, noLocation, parameters);	
-}	
-
+	
+	
 function yesLocation(attr){
 	
 	var lngt = attr.coords.longitude;
@@ -68,3 +60,13 @@ function noLocation() {
 		errorMessage.innerHTML="Your location is uknown";	
 
 }
+
+	container.innerHTML = "<p id = 'yourLocation' style='text-align: center'>Your location is </p>";
+		parameters = {
+			enableHighAccuracy: true,
+			timeout: 5000,
+			maximumAge: 0	
+		}
+		
+	navigator.geolocation.getCurrentPosition(yesLocation, noLocation, parameters);	
+}	
