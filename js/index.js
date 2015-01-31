@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 });
 	
-function location() {
+function myLocation() {
 	
 	container = document.createElement("div");
 	container.setAttribute("class", "container");
