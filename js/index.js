@@ -30,10 +30,10 @@ function location() {
 	}
 	
 	
-function yesLocation(attr){
+function yesLocation(position){
 	
-	var lngt = attr.coords.longitude;
-	var ltd = attr.coords.latitude;
+	var lngt = position.coords.longitude;
+	var ltd = position.coords.latitude;
 	document.querySelector("#yourLocation").innerHTML = "";
 	//use canvas to create an img
 	canvas = document.createElement("canvas");
