@@ -4,13 +4,7 @@ var container;
 var errorMessage;
 var canvas;
 var parameters;
-/*document.addEventListener("DOMContentLoaded", function () {
-	
-	var button = document.createElement("btn");
-	button.addEventListener("click", location);
-	document.body.appendChild(button);
-	
-});*/
+
 	
 function myLocation() {
 	
