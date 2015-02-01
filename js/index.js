@@ -1,12 +1,12 @@
 // JavaScript Document
 
 var container;
-var errorMessage;
+
 var canvas;
 var parameters;
 
 	
-function myLocation() {
+document.addEventListener("DOMContentLoaded", function(){
 	
 	container = document.createElement("div");
 	container.setAttribute("class", "container");
@@ -16,15 +16,13 @@ function myLocation() {
 	//no geolocation API in the browser
 	if(!navigator.geolocation){
 		//error message
-		errorMessage = document.createElement("div");
-		errorMessage.setAttribute("id", "errorContainer");
-		document.body.appendChild(errorMessage);
-		errorMessage.innerHTML="Your browser doesn't support geolocation API.";	
+		
+		container.innerHTML="Your browser doesn't support geolocation API.";
+        
 			
-	}
-	
-	
-function yesLocation(position){
+	}else {
+    
+    function yesLocation(position){
 	
 	var lngt = position.coords.longitude;
 	var ltd = position.coords.latitude;
@@ -43,7 +41,7 @@ function yesLocation(position){
 	}; 
 	img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + ltd + "," + lngt +  "&zoom=14&size=400x400&sensor=false&markers=color:orange%7Clabel:N%7C" + ltd + "," + lngt + "";
 	
-}
+};
 
 function noLocation() {
 	
@@ -53,9 +51,10 @@ function noLocation() {
 		document.body.appendChild(errorMessage);
 		errorMessage.innerHTML="Your location is uknown";	
 
-}
+};
 
-	container.innerHTML = "<p id = 'yourLocation' style='text-align: center'>Your location is </p>";
+    
+    container.innerHTML = "<p id = 'yourLocation' style='text-align: center'>Your location is </p>";
 		parameters = {
 			enableHighAccuracy: true,
 			timeout: 5000,
@@ -63,4 +62,9 @@ function noLocation() {
 		}
 		
 	navigator.geolocation.getCurrentPosition(yesLocation, noLocation, parameters);	
-}	
+    }
+});
+	
+
+	
+	
